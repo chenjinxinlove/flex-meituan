@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <title>Title</title>
+</head>
+<style>
+    html{font-size: 100px}
+    body, button, select, textarea, input, label, option, fieldset, legend{font-family: 微软雅黑E\8F6F\96C5\9ED1,Tahoma,Verdana;line-height: 18px;color: #444;}
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
+    textarea{resize: none}
+    .clear{height:1px;overflow:hidden;clear:both;}
+    a,img{border:0;}
+    a{color: #666;text-decoration: none;}
+    li{list-style-type:none;}
+    .fl{float:left;}
+    .fr{float:right;}
+    .nf{clear:both;}
+    .red{color:red;font-weight:bold;}
+    .green{color:#00b500;font-weight:bold;}
+    .ds{display:block;}
+    .hid{overflow:hidden;}
+    .clearfix{*zoom:1}
+    .clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:'.';font-size:0}
+    .jianbian{background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f4f4f4),color-stop(100%,#eee));background: -webkit-linear-gradient(top,#f4f4f4 0,#eee 100%);background: linear-gradient(to bottom,#f4f4f4 0,#eee 100%);}
+    .bottomshadow{border-bottom: solid 1px #B3B3B3;-webkit-box-shadow: 0 1px 1px 0 #DFDFDF;box-shadow: 0 1px 1px 0 #DFDFDF;}
+
+    .top{
+        width: 100%;
+        height: 0.5rem;
+        background: #06c1ae;
+        display: flex;
+        display: -webkit-box;
+        font-size: 0.18rem;
+        justify-content: space-between;
+        box-pack:justify;
+        align-items: center;
+        -webkit-box-align: center;
+        padding:0 0.16rem 0 0.1rem ;
+    }
+    .footer{
+        width: 100%;
+        height: 1.7rem ;
+        background: #f0efed;
+    }
+    .main{
+        width: 100%;
+        font-size: 0.14rem;
+    }
+    .add{
+        width:0.5rem;
+        height: 0.18rem;
+        color: #fff;
+        position: relative;
+    }
+    .add:after{
+        content: "";
+        position: absolute;
+        background: url("img/down_03.png") no-repeat center ;
+        height: 0.1rem;
+        width: 0.1rem;
+        top:0.05rem;
+        right:0.015rem;
+    }
+    .search{
+        width: 68%;
+        height: 0.33rem;
+        border-radius: 0.04rem;
+        background-color: #05a494;
+        margin: 0 0.1rem 0 0.1rem;
+        display: flex;
+        display: -webkit-box;
+        align-items: center;
+        -webkit-box-align: center;
+        font-size: 0.14rem;
+    }
+    .search:before{
+        content: " ";
+        display: inline-block;
+        height: 0.16rem;
+        width: 0.16rem;
+        margin-left: 0.1rem;
+        background: url("img/seacr_03.png") no-repeat left center;
+    }
+    .search input{
+        border: none;
+        background:#05a494 ;
+        height: 0.16rem;
+    }
+    .center{
+        font-size: 0.11rem;
+        color: #fff;
+        margin-top: 0.05rem;
+    }
+    .center-icon{
+        background: url("img/geren_03.png") no-repeat center center;
+        width: 0.16rem;
+        height: 0.16rem;
+        background-size: cover;
+    }
+    .ad{
+        display: flex;
+        display: -webkit-box;
+        justify-content: center;
+        -webkit-box-pack:center;
+    }
+    .first{
+        margin-bottom: 0.16rem;
+    }
+    .first, .second {
+        display: flex;
+        display: -webkit-box;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+    .first li, .second li{
+        width: 20%;
+        text-align: center;
+    }
+    .icon{
+        padding: 0.16rem 0;
+        background-color: #fff;
+    }
+    .kuai{
+        width: 100%;
+        padding: 0.1rem;
+        display: flex;
+        display: -webkit-box;
+        justify-content: flex-start;
+        margin-top:0.1rem;
+        background-color: #fff;
+    }
+    .left{
+        width: 32%;
+        height:1.2rem ;
+        border-right: 1px solid #ccc;
+        text-align: left;
+        padding: 0.2rem 0 0.1rem 0.11rem;
+    }
+    .left p:first-child{
+        color: #95c669;
+        font-size: 0.18rem;
+        font-weight: bold;
+        margin-bottom: 0.1rem;
+    }
+    .left p:nth-child(2){
+        color: #ccc;
+        margin-bottom: 0.1rem;
+    }
+    .right{
+        width: 66%;
+        height: 1.2rem;
+    }
+    .chao{
+        width: 90%;
+        height: 0.75rem;
+        border-bottom: 1px solid #ccc;
+    }
+    .yanq ,.ming{
+        width: 1.2rem;
+        height: 0.75rem;
+    }
+    .yanq {
+        border-right: 1px solid #ccc;
+    }
+    .dddd{
+        display: flex;
+        display: -webkit-box;
+    }
+
+</style>
+<body style="background-color: #f0efed">
+
+    <div class="top">
+        <div class="add">北京</div>
+        <div class="search">
+           输入商家/品类/商圈
+        </div>
+        <div class="center">
+            <div class="center-icon"></div>
+            <div style="text-indent: -0.02rem">我的</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="ad">
+            <img src="img/po_15.png" alt="">
+        </div>
+        <div class="icon">
+            <div >
+                <ul class="first">
+                    <li>
+                        <img src="img/meishi_19.png" alt="">
+                        <p>美食</p>
+                    </li>
+                    <li>
+                        <img src="img/dianying_19.png" alt="">
+                        <p>电影</p>
+                    </li>
+                    <li>
+                        <img src="img/jiudian_19.png" alt="">
+                        <p>酒店</p>
+                    </li>
+                    <li>
+                        <img src="img/xiuxian_19.png" alt="">
+                        <p>休闲娱乐</p>
+                    </li>
+                    <li>
+                        <img src="img/waimai_19.png" alt="">
+                        <p>外卖</p>
+                    </li>
+                </ul>
+            </div>
+            <div >
+                <ul class="second">
+                    <li>
+                        <img src="img/ktv_19.png" alt="">
+                        <p>KTV</p>
+                    </li>
+                    <li>
+                        <img src="img/zhoubinayou_19.png" alt="">
+                        <p>周边游</p>
+                    </li>
+                    <li>
+                        <img src="img/liren_19.png" alt="">
+                        <p>丽人</p>
+                    </li>
+                    <li>
+                        <img src="img/xiaochi_19.png" alt="">
+                        <p>小吃快餐</p>
+                    </li>
+                    <li>
+                        <img src="img/feiji_19.png" alt="">
+                        <p>机票/火车票</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="kuai">
+            <div class="left">
+                <p >我们约吧</p>
+                <p>恋人家人好朋友</p>
+                <img src="img/yue_23.png" alt="">
+            </div>
+            <div class="right">
+                <div class="chao">
+                    <p>超值生活</p>
+                    <p>十元优惠价</p>
+                </div>
+                <div class="dddd">
+                    <div class="yanq">
+                        <p>聚餐宴请</p>
+                        <p>朋友家人常聚聚</p>
+                    </div>
+                    <div class="ming">
+                        <p>名店抢购</p>
+                        <p>距离结束</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+
+
+</body>
+</html>
